@@ -9,13 +9,19 @@ public void setup(){
   coordenadasRect = new PVector(distEntreRect,distEntreRect);
 }
 
-public void rectangulosDibujados(){
-  rect(coordenadasRect.x,coordenadasRect.y,anchoRect,altoRect);
-}
-
 public void draw(){
   rectangulosDibujados();
 }
+
+public void rectangulosDibujados(){
+  for(float x=coordenadasRect.x; x<width; x+=(anchoRect+distEntreRect)){
+    rect(x,coordenadasRect.y,anchoRect,altoRect);
+  }
+  for(float y=coordenadasRect.y; y<height; y+=(altoRect+distEntreRect)){
+    rect(coordenadasRect.x,y,anchoRect,altoRect);
+  }
+}
+
 
 /**int distEntreRect = 20;
 int anchoDeRect = 40;
